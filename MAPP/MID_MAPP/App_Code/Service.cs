@@ -125,17 +125,19 @@ public class Service : System.Web.Services.WebService
                 + "(CONNECT_DATA=(SERVICE_NAME=mdlwdev)));"
                 + "User Id=midware;Password=midware";*/
 
-        /*  --test database  */
+        /*  --test database  
         private static string OracleServer = "Data Source=(DESCRIPTION="
                 + "(ADDRESS=(PROTOCOL=TCP)(HOST=172.21.56.33)(PORT=1521))"
                 + "(CONNECT_DATA=(SERVICE_NAME=mdlwtst)));"
-                + "User Id=midware;Password=midware";
+                + "User Id=midware;Password=midware";*/
 
         /*  --prod database  
         private static string OracleServer = "Data Source=(DESCRIPTION="
                 + "(ADDRESS=(PROTOCOL=TCP)(HOST=172.21.52.55)(PORT=1521))"
                 + "(CONNECT_DATA=(SERVICE_NAME=mdlwprd)));"
                 + "User Id=midware;Password=midware";*/
+
+        private static string OracleServer = "Data Source = MID_DB; User Id = midware; Password=midware";
 
         private OracleConnection conn = new OracleConnection(OracleServer);
 
@@ -274,7 +276,7 @@ public class Service : System.Web.Services.WebService
 
             Debug.WriteLine("RES: " + int.Parse(cmd.Parameters["VO_RES"].Value.ToString()));
             RES = int.Parse(cmd.Parameters["VO_RES"].Value.ToString());
-            if (RES < 0)
+            if (RES <= 0)
             {
                 return false;
             }

@@ -90,23 +90,26 @@ public class Service : System.Web.Services.WebService
         public string Logon;
         public string Response_FN;
         public DataSet ds = new DataSet(); //
-        /* --dev database 
-        private static string OracleServer = "Data Source=(DESCRIPTION="
-                + "(ADDRESS=(PROTOCOL=TCP)(HOST=172.21.56.30)(PORT=1521))"
-                + "(CONNECT_DATA=(SERVICE_NAME=mdlwdev)));"
-                + "User Id=midware;Password=midware";*/
+                                           /* --dev database 
+                                           private static string OracleServer = "Data Source=(DESCRIPTION="
+                                                   + "(ADDRESS=(PROTOCOL=TCP)(HOST=172.21.56.30)(PORT=1521))"
+                                                   + "(CONNECT_DATA=(SERVICE_NAME=mdlwdev)));"
+                                                   + "User Id=midware;Password=midware";*/
 
-        /*  --test database  */
+        /*  --test database  
         private static string OracleServer = "Data Source=(DESCRIPTION="
                 + "(ADDRESS=(PROTOCOL=TCP)(HOST=172.21.56.33)(PORT=1521))"
                 + "(CONNECT_DATA=(SERVICE_NAME=mdlwtst)));"
-                + "User Id=midware;Password=midware";
+                + "User Id=midware;Password=midware";*/
 
         /*  --prod database  
         private static string OracleServer = "Data Source=(DESCRIPTION="
                 + "(ADDRESS=(PROTOCOL=TCP)(HOST=172.21.52.55)(PORT=1521))"
                 + "(CONNECT_DATA=(SERVICE_NAME=mdlwprd)));"
                 + "User Id=midware;Password=midware";*/
+
+
+        private static string OracleServer = "Data Source = MID_DB; User Id = midware; Password=midware";
 
         private OracleConnection conn = new OracleConnection(OracleServer);
 
